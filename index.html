@@ -4,12 +4,15 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Akpede Owens - Fullstack Developer</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://cdn.tailwindcss.com?plugins=forms,container-queries" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827;color: #D1D5DB;}
+            background-color: #111827;
+            color: #D1D5DB;
+        }
         .glassmorphism {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -20,6 +23,27 @@
             background: linear-gradient(to right, #60A5FA, #A78BFA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%230B1120' stroke-width='66.7' stroke-opacity='0.14' %3E%3Ccircle fill='%23111827' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23101725' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%230e1623' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%230d1521' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%230c141f' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%230b131d' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%230a111b' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23091019' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23080f17' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23070e15' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23060d13' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23050c11' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23030a0f' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%2302090d' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%2301070b' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23000609' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23000507' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23000305' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+        .code-line {
+            position: absolute;
+            font-family: 'Courier New', Courier, monospace;
+            color: rgba(209, 213, 219, 0.1);font-size: 10px;
+            white-space: nowrap;
+            opacity: 0;
+            animation: codeLineAnim 15s linear infinite;
+            user-select: none;
+        }
+        @keyframes codeLineAnim {
+            0% { transform: translateY(100vh) translateX(var(--start-x)); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(var(--start-x)); opacity: 0; }
         }
     </style>
 </head>
@@ -36,20 +60,27 @@
 </nav>
 </header>
 <main>
-<section class="min-h-screen flex flex-col items-center justify-center text-center py-20 px-4 sm:px-6 lg:px-8 bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('image-hero-background.jpg');">
-<img alt="Akpede Owens portrait" class="w-32 h-32 rounded-full mb-8 border-4 border-blue-500 shadow-lg" src="./asset/image/profile.jpg"/>
+<section class="min-h-screen flex flex-col items-center justify-center text-center py-20 px-4 sm:px-6 lg:px-8 hero-bg tech-animation-bg relative">
+<div class="absolute inset-0 bg-gray-900/70"></div> 
+<div class="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+<div class="absolute inset-0" id="code-lines-container"></div>
+</div>
+
+<div class="relative z-10">
+<img alt="Akpede Owens portrait" class="w-32 h-32 rounded-full mb-8 border-4 border-blue-500 shadow-lg mx-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALxyuDHtL9ztOA8qy5wQ3204u905C1E1Thu9kLIpFRBV-ppHFXzVvmLmWS5yjoycj3xtbdpufGZnCTvJbzDF3It-A_ZXMVGkMBGcttiq8nUV8fXZqjMVGX884OtDROuqPLl3NHLB2OvxGHHvOXMWxevePIv8tGQcLg4mffojpg0kc6q6oePSmvXP2n5xKkVkwHfFeqxBkmgdAxdjxkV_4tYwKHio7UEMegcmeYe4aBNANhGa70VeWMloYZOy2dXUfKM-tKjmvUp8o"/>
 <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">
-                Akpede Owens
-            </h1>
+                    Akpede Owens
+                </h1>
 <p class="text-2xl md:text-3xl gradient-text font-semibold mb-8">
-                Futuristic Full Stack Developer
-            </p>
-<p class="max-w-3xl text-lg text-gray-300 mb-10 leading-relaxed">
-                Crafting next-generation digital experiences with cutting-edge technology and a passion for innovation. Let's build the future, one line of code at a time.
-            </p>
+                    Futuristic Full Stack Developer
+                </p>
+<p class="max-w-3xl text-lg text-gray-300 mb-10 leading-relaxed mx-auto">
+                    Crafting next-generation digital experiences with cutting-edge technology and a passion for innovation. Let's build the future, one line of code at a time.
+                </p>
 <a class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-transform transform hover:scale-105 text-lg" href="#projects">
-                Explore My Work
-            </a>
+                    Explore My Work
+                </a>
+</div>
 </section>
 <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800" id="about">
 <div class="container mx-auto text-center">
@@ -104,7 +135,7 @@
 </div>
 <a class="inline-flex items-center text-green-400 hover:text-green-300 font-medium group" href="#">
                             View Project
-                           <span class="material-icons ml-1 text-lg transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            <span class="material-icons ml-1 text-lg transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
 <div class="glassmorphism rounded-xl p-6 shadow-xl hover:shadow-yellow-500/30 transition-all duration-300 transform hover:-translate-y-1">
@@ -129,7 +160,7 @@
 </div>
 <a class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium group" href="#">
                             View Project
-                           <span class="material-icons ml-1 text-lg transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            <span class="material-icons ml-1 text-lg transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
 </a>
 </div>
 <div class="glassmorphism rounded-xl p-6 shadow-xl hover:shadow-pink-500/30 transition-all duration-300 transform hover:-translate-y-1">
@@ -198,23 +229,33 @@
                 </p>
 <div class="flex justify-center space-x-6 mb-10">
 <a class="text-gray-400 hover:text-blue-400 transition-colors" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.246-.777-3.136 0L10.125 8.25l.821.821L12 8.472l1.054.603.821-.822-1.5-1.124zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" fill-rule="evenodd"></path></svg>
+<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm11.378-3.917c-.89-.777-2.246-.777-3.136 0L10.125 8.25l.821.821L12 8.472l1.054.603.821-.822-1.5-1.124zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" fill-rule="evenodd"></path>
+</svg>
 <span class="sr-only">Email</span>
 </a>
 <a class="text-gray-400 hover:text-blue-400 transition-colors" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M21.822 7.422C21.822 6.63 21.192 6 20.4 6H3.6C2.808 6 2.178 6.63 2.178 7.422V16.578C2.178 17.37 2.808 18 3.6 18H20.4C21.192 18 21.822 17.37 21.822 16.578V7.422ZM12.335 13.564L12 13.353L11.665 13.564L6.839 16.929L3.896 7.711H20.104L17.161 16.929L12.335 13.564ZM4.304 8.011L12 12.31L19.696 8.011V7.711H4.304V8.011Z"></path></svg> 
+<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M21.822 7.422C21.822 6.63 21.192 6 20.4 6H3.6C2.808 6 2.178 6.63 2.178 7.422V16.578C2.178 17.37 2.808 18 3.6 18H20.4C21.192 18 21.822 17.37 21.822 16.578V7.422ZM12.335 13.564L12 13.353L11.665 13.564L6.839 16.929L3.896 7.711H20.104L17.161 16.929L12.335 13.564ZM4.304 8.011L12 12.31L19.696 8.011V7.711H4.304V8.011Z"></path>
+</svg>
 <span class="sr-only">Email alternative</span>
 </a>
 <a class="text-gray-400 hover:text-blue-400 transition-colors" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path>
+</svg>
 <span class="sr-only">LinkedIn</span>
 </a>
 <a class="text-gray-400 hover:text-blue-400 transition-colors" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+</svg>
 <span class="sr-only">GitHub</span>
 </a>
 <a class="text-gray-400 hover:text-blue-400 transition-colors" href="#">
-<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.422.724-.665 1.565-.665 2.454 0 1.479.78 2.807 2.018 3.583-.724-.023-1.414-.223-2.005-.553v.051c0 2.039 1.479 3.788 3.486 4.179-.363.099-.752.133-1.15.133-.28 0-.552-.028-.815-.079.534 1.696 2.088 2.934 3.934 2.969-1.465 1.147-3.319 1.833-5.334 1.833-.346 0-.688-.02-1.023-.06C3.493 20.619 5.761 21.607 8.28 21.607c9.593 0 14.853-7.732 14.467-14.853.997-.694 1.864-1.564 2.253-2.59z"></path></svg>
+<svg aria-hidden="true" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+<path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.422.724-.665 1.565-.665 2.454 0 1.479.78 2.807 2.018 3.583-.724-.023-1.414-.223-2.005-.553v.051c0 2.039 1.479 3.788 3.486 4.179-.363.099-.752.133-1.15.133-.28 0-.552-.028-.815-.079.534 1.696 2.088 2.934 3.934 2.969-1.465 1.147-3.319 1.833-5.334 1.833-.346 0-.688-.02-1.023-.06C3.493 20.619 5.761 21.607 8.28 21.607c9.593 0 14.853-7.732 14.467-14.853.997-.694 1.864-1.564 2.253-2.59z"></path>
+</svg>
 <span class="sr-only">Twitter</span>
 </a>
 </div>
@@ -230,6 +271,40 @@
 </footer>
 <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Create and append animated code lines
+        const codeLinesContainer = document.getElementById('code-lines-container');
+        const codeSnippets = [
+            "const greet = () => console.log('Hello, Future!');",
+            "function innovate(idea) { return воплотить(idea); }",
+            "SELECT * FROM solutions WHERE problem_solved = TRUE;",
+            "git commit -m 'feat: Build the next big thing'",
+            "npm install awesome-package --save-dev",
+            "useEffect(() => {}, []);",
+            "class Developer { constructor(name) { this.name = name; } }",
+            "async function fetchData() { return await fetch('/api/data'); }",
+            "01101000 01100101 01101100 01101100 01101111", // "hello" in binary
+            "for item in data: process(item)"
+        ];
+        function createCodeLine() {
+            if (!codeLinesContainer) return;
+            const line = document.createElement('div');
+            line.classList.add('code-line');
+            line.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+            const startX = Math.random() * 100 + 'vw'; // Start anywhere across the width
+            line.style.setProperty('--start-x', startX);
+            line.style.left = Math.random() * 100 + 'vw'; // Random horizontal start for initial appearance
+            line.style.animationDelay = Math.random() * 15 + 's'; // Stagger animations
+            line.style.animationDuration = (10 + Math.random() * 10) + 's'; // Vary speeds
+            codeLinesContainer.appendChild(line);
+            // Remove the line after animation to prevent DOM clutter
+            line.addEventListener('animationend', () => {
+                line.remove();
+            });
+        }
+        // Create initial set of lines and then add more periodically
+        for (let i = 0; i < 15; i++) { // Initial number of lines
+            createCodeLine();
+        }
+        setInterval(createCodeLine, 1000); // Add a new line every second
     </script>
-
 </body></html>
