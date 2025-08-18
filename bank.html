@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Banking App</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F7F8FA;}
+        .material-icons {
+            font-family: 'Material Icons';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;text-rendering: optimizeLegibility;-moz-osx-font-smoothing: grayscale;font-feature-settings: 'liga';}
+        .bottom-nav-item.active span, .bottom-nav-item.active .material-icons {
+            color: #4F46E5;}
+        .balance-card {
+            background: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);}
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="max-w-sm mx-auto">
+<div class="p-6">
+<header class="flex justify-between items-center mb-8">
+<div class="flex items-center">
+<img alt="User avatar" class="w-12 h-12 rounded-full mr-3 border-2 border-white shadow-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsG9bmtrkgUICuktChSxbQCfCJi6CZmkk6s_azgLYRV04c1vQ8CNYCiBy4_l01ZlENAJ-Gv36sND3qWmsGGsDqMw3hBznambIlVDxI7_ut128CYJcMQyVPpzpAxq9_JKSlhd0aIV7BHalmsyTobSJ5Y1Legiah4epUmRuKi5NpEdjaDt-MUy9sXGEracGav-DXDUdvTMC1vdpbCjmF6uZUxNjGLP1AM8JGcA0oWnqY9CcBFwUZS7Z8McNytFYImtHg5qFxAVrvBcwn"/>
+<div>
+<p class="text-sm text-gray-600">Hi, Emilia Smith</p>
+<h1 class="text-xl font-bold text-gray-800">Welcome back!</h1>
+</div>
+</div>
+<button class="relative text-gray-500 hover:text-gray-700 focus:outline-none">
+<span class="material-icons">notifications</span>
+<span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white"></span>
+</button>
+</header>
+<div class="balance-card text-white p-6 rounded-xl shadow-lg mb-8">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-sm opacity-80">Balance</p>
+<p class="text-4xl font-bold mt-1">$18,500.00</p>
+</div>
+<span class="material-icons text-3xl opacity-80">visibility_off</span>
+</div>
+<div class="flex justify-between items-end mt-6">
+<p class="text-sm opacity-80">**** **** **** 4312</p>
+<img alt="Visa logo" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIgsKFGuZQhm5bYnbgvRM3PY2HMkYyXYLnLT7nZyoW2Cuhknsvze57VVAAHBni3Ipoz3MiSUhHXO4yFx5DT4twdIY0mCvjD5agDlRQz3xQGOQekkjodvJyk6Y3tLDxR-NS8QYXUvMx5igJZbiNXW3NowTr5j-mtr0dYnIC37klahwqhgO2F_WX5cLeZiL935ydXnnbG34ALoetuWZmHOdIbGX_SMQE6gaCV_XVHTWw71G2G5OnMRbm7unOP-P2LkOQqBfyV1SrVlF1"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<button class="flex items-center justify-center bg-indigo-50 text-indigo-600 p-4 rounded-lg shadow-sm hover:bg-indigo-100 transition-colors">
+<span class="material-icons mr-2">add_circle_outline</span>
+<span class="font-medium">Add Money</span>
+</button>
+<button class="flex items-center justify-center bg-indigo-50 text-indigo-600 p-4 rounded-lg shadow-sm hover:bg-indigo-100 transition-colors">
+<span class="material-icons mr-2 transform -rotate-45">send</span>
+<span class="font-medium">Send Money</span>
+</button>
+<button class="flex items-center justify-center bg-indigo-50 text-indigo-600 p-4 rounded-lg shadow-sm hover:bg-indigo-100 transition-colors">
+<span class="material-icons mr-2">account_balance_wallet</span>
+<span class="font-medium">Deposit</span>
+</button>
+<button class="flex items-center justify-center bg-indigo-50 text-indigo-600 p-4 rounded-lg shadow-sm hover:bg-indigo-100 transition-colors">
+<span class="material-icons mr-2">credit_card</span>
+<span class="font-medium">Withdraw</span>
+</button>
+</div>
+<div class="mb-8">
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-bold text-gray-800">Transaction History</h2>
+<a class="text-sm text-indigo-600 hover:text-indigo-800 font-medium" href="#">See all</a>
+</div>
+<div class="flex space-x-4 mb-6 border-b border-gray-200">
+<button class="pb-2 border-b-2 border-indigo-600 text-indigo-600 font-medium">All</button>
+<button class="pb-2 text-gray-500 hover:text-gray-700 font-medium">Income</button>
+<button class="pb-2 text-gray-500 hover:text-gray-700 font-medium">Expense</button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+<div class="flex items-center">
+<div class="p-3 bg-red-100 rounded-full mr-4">
+<span class="material-icons text-red-500">swap_horiz</span>
+</div>
+<div>
+<p class="font-semibold text-gray-700">Transfers</p>
+<p class="text-sm text-gray-500">Outgoing &amp; Incoming</p>
+</div>
+</div>
+<p class="font-semibold text-red-500">-$150.00</p>
+</div>
+<div class="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm">
+<div class="flex items-center">
+<img alt="John Smith avatar" class="w-10 h-10 rounded-full mr-4 border border-gray-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCATK0cu6e8A1lI2z7cW6OQp0UEdFnJG4RS7GYei6-WzuPICbTt0UZuJiYzHYUbm-Rr43D66QRvoiaQlEEQQZfWIIW5YKY-ZkeGNPonOWgslUrYxALMjblXD6cYucb9KvfYIlDnnQwNbgYfMBWe02BifHPxBmBiQOYjON1qiWSJjK7YEITcdEDnheZdKoimV2sG_8cCHzGhPF0yTaszwlTd7xOFOgyCdO9HPZ8v_4IPEqF8qTWG5zUv7lyIlaccpFzwg_ZuCH8myMn"/>
+<div>
+<p class="font-semibold text-gray-700">Quick Transfer</p>
+<p class="text-sm text-gray-500">John Smith</p>
+</div>
+</div>
+<p class="font-semibold text-green-500">+$350.00</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="fixed bottom-0 left-0 right-0 max-w-sm mx-auto bg-white border-t border-gray-200 shadow-top">
+<nav class="flex justify-around items-center h-16">
+<a class="bottom-nav-item active flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors" href="#">
+<span class="material-icons">home</span>
+<span class="text-xs font-medium">Home</span>
+</a>
+<a class="bottom-nav-item flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors" href="#">
+<span class="material-icons">account_balance_wallet</span>
+<span class="text-xs font-medium">Wallet</span>
+</a>
+<a class="bottom-nav-item flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors" href="#">
+<span class="material-icons">bar_chart</span>
+<span class="text-xs font-medium">Report</span>
+</a>
+<a class="bottom-nav-item flex flex-col items-center text-gray-500 hover:text-indigo-600 transition-colors" href="#">
+<span class="material-icons">person</span>
+<span class="text-xs font-medium">Account</span>
+</a>
+</nav>
+</footer>
+
+</body></html>
